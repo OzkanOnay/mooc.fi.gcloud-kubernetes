@@ -42,7 +42,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: dwk-cluster
-  GKE_ZONE: europe-north1-b
+  GKE_ZONE: europe-north1
   REGISTRY: europe-north1-docker.pkg.dev
   REPOSITORY: my-repo
   IMAGE: dwk-environments
@@ -82,7 +82,7 @@ jobs:
         with:
           cluster_name: '${{ env.GKE_CLUSTER }}'
           project_id: '${{ env.PROJECT_ID }}'
-          location: '${{ env.GKE_ZONE }}'
+          location: 'europe-north1-b'
 
       - name : 'Form the image name'
         run: echo "IMAGE_TAG=$REGISTRY/$PROJECT_ID/$REPOSITORY/$IMAGE:$BRANCH-$GITHUB_SHA" >> $GITHUB_ENV
