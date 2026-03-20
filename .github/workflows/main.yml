@@ -90,7 +90,7 @@ jobs:
       - name: 'Docker Auth'
         uses: 'docker/login-action@v3'
         with:
-          registry: 'us-west1-docker.pkg.dev' # Matches your location
+          registry: 'europe-north1-docker.pkg.dev' # Matches your location
           username: '_json_key'
           password: '${{ secrets.GKE_SA_KEY }}'
 
